@@ -129,9 +129,11 @@ ynh_setup_source "$final_path/addon" "app_addons"
 
 
 # 3 - Some extra folders
-ynh_print_info "Creating smarty3 folder for personal data..."
-sudo mkdir -p "${final_path}/store/[data]/smarty3"
+ynh_print_info "Creating cache folder & smarty3 folder for personal data..."
+sudo mkdir -p "${final_path}/store"
 sudo chmod -R 777 $final_path/store
+sudo mkdir -p "${final_path}/cache/smarty3"
+sudo chmod -R 777 $final_path/cache
 
 # Import database schema
 ynh_print_info "Importing database..."
@@ -144,6 +146,7 @@ sudo cp $final_path/install/htconfig.sample.php $final_path/.htconfig.php
 # Create php.log inside for logs
 ynh_print_info "Create php.log for the debuging..."
 sudo touch "$final_path/php.log"
+sudo chown www-data:www-data $final_path/php.log
 
 #=================================================
 # MODIFY A CONFIG FILE
@@ -170,7 +173,7 @@ ynh_print_info "Push Ldap configuration to .htconfig.php..."
 sudo su -c "cat ../conf/ldap_conf.php >> $final_path/.htconfig.php"
 
 # Addon Zap protocol (currently the if zap config is not pusshed in the config file, Osada protocol is taken by default)
-sudo su -c "cat ../conf/zap.php >> $final_path/.htconfig.php"
+#sudo su -c "cat ../conf/zap.php >> $final_path/.htconfig.php"
 
 #=================================================
 # NGINX CONFIGURATION
