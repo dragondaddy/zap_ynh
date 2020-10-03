@@ -80,7 +80,7 @@ ynh_system_user_create $app
 # RESTORE THE PHP-FPM CONFIGURATION
 #=================================================
 
-ynh_restore_file "/etc/php/7.0/fpm/pool.d/$app.conf"
+ynh_restore_file "/etc/php/7.3/fpm/pool.d/$app.conf"
 
 #=================================================
 # SPECIFIC RESTORATION
@@ -122,7 +122,7 @@ ynh_app_setting_set $app skipped_uris "/"
 #=================================================
 ynh_print_info "Reloading nginx web server and php-fpm..."
 
-systemctl reload php7.0-fpm
+systemctl reload php7.3-fpm
 systemctl reload nginx
 
 #=================================================

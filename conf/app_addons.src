@@ -1,5 +1,5 @@
-SOURCE_URL=https://framagit.org/zot/zap-addons/-/archive/aba763a5f8ae6494e8a99d8ab7715682517a75bc/zap-addons-aba763a5f8ae6494e8a99d8ab7715682517a75bc.tar.gz
-SOURCE_SUM=0658f8fc3ee9144131d06cd1817d4b4c44b57c714e4a4c533ff069a9d1ea2417
+SOURCE_URL=https://codeberg.org/zot/zap-addons/archive/efe55bbdc360c8a1601fcc7cffb8022585bb6efc.tar.gz
+SOURCE_SUM=1580898f2413dd7bf995961611b02d08807726a181bc22a33a3dc95b4345b0b9
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=tar.gz
 SOURCE_IN_SUBDIR=
