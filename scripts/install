@@ -123,8 +123,10 @@ ynh_setup_source "$final_path"
 
 # Make addon Directory and unpack the addons to this directory
 ynh_print_info "Create addon directory..."
-sudo $final_path/util/add_addon_repo https://codeberg.org/zot/zap-addons.git zaddons
-sudo mv extend $final_path/
+#sudo $final_path/util/add_addon_repo https://codeberg.org/zot/zap-addons.git zaddons
+#sudo mv extend $final_path/
+mkdir -p $final_path/extend/addon/zaddons
+ynh_setup_source --dest_dir="$final_path/extend/addon/zaddons" --source_id="app_addons"
 
 # 3 - Some extra folders
 ynh_print_info "Creating cache folder & smarty3 folder for personal data..."
