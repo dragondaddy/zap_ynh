@@ -123,6 +123,7 @@ ynh_setup_source "$final_path"
 
 # Make addon Directory and unpack the addons to this directory
 ynh_print_info "Create addon directory..."
+cd $final_path
 sudo $final_path/util/add_addon_repo https://codeberg.org/zot/zap-addons.git zaddons
 
 # 3 - Some extra folders
