@@ -122,11 +122,9 @@ ynh_setup_source "$final_path"
 # 2 - Zap Addons
 
 # Make addon Directory and unpack the addons to this directory
-ynh_print_info "Create addon directory..."
+#ynh_print_info "Create addon directory..."
+#cd $final_path
 #sudo $final_path/util/add_addon_repo https://codeberg.org/zot/zap-addons.git zaddons
-#sudo mv extend $final_path/
-mkdir -p $final_path/extend/addon/zaddons
-ynh_setup_source --dest_dir="$final_path/extend/addon/zaddons" --source_id="app_addons"
 
 # 3 - Some extra folders
 ynh_print_info "Creating cache folder & smarty3 folder for personal data..."
@@ -254,6 +252,14 @@ ynh_use_logrotate "$final_path/php.log"
 #=================================================
 ynh_print_info "Add Fail2Ban..."
 ynh_add_fail2ban_config "$final_path/php.log" "^.*auth\.php.*failed login attempt.*from IP <HOST>.*$" 5
+
+# 2 - Zap Addons
+
+# Make addon Directory and unpack the addons to this directory
+ynh_print_info "Create addon directory..."
+cd $final_path
+sudo $final_path/util/add_addon_repo https://codeberg.org/zot/zap-addons.git zaddons
+
 
 #=================================================
 # SETUP SSOWAT
